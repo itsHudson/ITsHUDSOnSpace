@@ -1,26 +1,130 @@
 <h1>Computer Science → AI → ML → DL</h1>
 
-<table>
+<table style="width:100%; border-collapse: collapse; text-align: left;">
+  
   <tr>
-    <th style="white-space: nowrap;">Full Name</th>
-    <th>What it does</th>
-    <th>How it works</th>
-    <th style="white-space: nowrap;">Specific Example</th>
-    <th style="white-space: nowrap;">Tools / Software</th>
-    <th style="white-space: nowrap;">Relationship</th>
+    <th style="width:15%; white-space: nowrap; padding:10px;">Full Name</th>
+    <th style="width:20%; padding:10px;">What it does</th>
+    <th style="width:22%; padding:10px;">How it works</th>
+    <th style="width:18%; white-space: nowrap; padding:10px;">Specific Example</th>
+    <th style="width:15%; white-space: nowrap; padding:10px;">Tools / Software</th>
+    <th style="width:10%; white-space: nowrap; padding:10px;">Relationship</th>
   </tr>
 
   <tr>
-    <td style="white-space: nowrap;"><b>Computer Science (CS)</b></td>
-    <td>Create programs/software to solve problems using human-written instructions</td>
-    <td>
+    <td style="white-space: nowrap; padding:10px;">
+      <b>Computer Science (CS)</b>
+    </td>
+    
+    <td style="padding:10px;">
+      Create programs/software to solve problems using human-written instructions
+    </td>
+    
+    <td style="padding:10px;">
       1. Programmer writes code<br>
       2. Computer reads code<br>
       3. Executes instructions<br>
       4. Produces output
     </td>
-    <td style="white-space: nowrap;">Calculator app: 5 + 3 → output 8</td>
-    <td style="white-space: nowrap;">Python, Java, C++, Git, VS Code</td>
-    <td style="white-space: nowrap;">Largest field</td>
+    
+    <td style="white-space: nowrap; padding:10px;">
+      Calculator app: 5 + 3 → output 8
+    </td>
+    
+    <td style="white-space: nowrap; padding:10px;">
+      Python, Java, C++, Git, VS Code
+    </td>
+    
+    <td style="white-space: nowrap; padding:10px;">
+      Largest field
+    </td>
   </tr>
+
+  <tr>
+    <td style="white-space: nowrap; padding:10px;">
+      <b>Artificial Intelligence (AI)</b>
+    </td>
+    
+    <td style="padding:10px;">
+      Make computers perform tasks that normally require human decision-making
+    </td>
+    
+    <td style="padding:10px;">
+      1. Input enters system<br>
+      2. AI checks rules/logic<br>
+      3. Chooses action<br>
+      4. Returns output
+    </td>
+    
+    <td style="white-space: nowrap; padding:10px;">
+      Chess AI selects best move
+    </td>
+    
+    <td style="white-space: nowrap; padding:10px;">
+      Python, Prolog, OpenCV
+    </td>
+    
+    <td style="white-space: nowrap; padding:10px;">
+      Subset of CS
+    </td>
+  </tr>
+
+  <tr>
+    <td style="white-space: nowrap; padding:10px;">
+      <b>Machine Learning (ML)</b>
+    </td>
+    
+    <td style="padding:10px;">
+      Make computers learn from data to predict future results
+    </td>
+    
+    <td style="padding:10px;">
+      1. Collect data<br>
+      2. Train model<br>
+      3. Learn from examples<br>
+      4. Predict new data
+    </td>
+    
+    <td style="white-space: nowrap; padding:10px;">
+      Email spam detection
+    </td>
+    
+    <td style="white-space: nowrap; padding:10px;">
+      Python, Scikit-learn, Pandas
+    </td>
+    
+    <td style="white-space: nowrap; padding:10px;">
+      Subset of AI
+    </td>
+  </tr>
+
+  <tr>
+    <td style="white-space: nowrap; padding:10px;">
+      <b>Deep Learning (DL)</b>
+    </td>
+    
+    <td style="padding:10px;">
+      Use neural networks to learn complex data automatically
+    </td>
+    
+    <td style="padding:10px;">
+      1. Prepare large dataset<br>
+      2. Build neural network<br>
+      3. Train model<br>
+      4. Predict output
+    </td>
+    
+    <td style="white-space: nowrap; padding:10px;">
+      Cat image recognition
+    </td>
+    
+    <td style="white-space: nowrap; padding:10px;">
+      PyTorch, TensorFlow, CUDA
+    </td>
+    
+    <td style="white-space: nowrap; padding:10px;">
+      Subset of ML
+    </td>
+  </tr>
+
 </table>
