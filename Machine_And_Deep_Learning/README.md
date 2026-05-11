@@ -1,8 +1,8 @@
-# Computer Science → AI → ML → DL Hierarchy
+# Computer Science → AI → ML → DL
 
-| Full Name | What It Does | How It Works | Example | Tools / Software | Relationship |
-|------------|--------------|---------------|----------|-------------------|---------------|
-| **Computer Science (CS)** | Study and build computational systems, software, algorithms, and problem-solving solutions | 1. Design algorithm<br>2. Write program logic<br>3. Execute instructions<br>4. Produce output | Sorting numbers using Merge Sort | Python, Java, C++, Git, VS Code | Parent field |
-| **Artificial Intelligence (AI)** | Make machines simulate human intelligence such as reasoning, decision-making, planning, and problem solving | 1. Receive input<br>2. Apply rules/search/logic/models<br>3. Make decision<br>4. Return output | Chess AI choosing best move | Python, Prolog, OpenCV, Expert Systems | Subset of CS |
-| **Machine Learning (ML)** | Enable systems to learn patterns from data and make predictions without explicit programming | 1. Collect dataset<br>2. Train model<br>3. Learn patterns<br>4. Predict new data | Email spam detection | Python, Scikit-learn, Pandas, NumPy | Subset of AI |
-| **Deep Learning (DL)** | Use multi-layer neural networks to automatically learn complex patterns from large datasets | 1. Prepare large dataset<br>2. Build neural network<br>3. Train model<br>4. Generate predictions | Image recognition (cat vs dog) | Python, TensorFlow, PyTorch, CUDA, GPUs | Subset of ML |
+| Full Name | What it does | How it works | Specific Example | Tools / Software | Relationship |
+|------------|--------------|---------------|------------------|------------------|---------------|
+| **Computer Science (CS)** | Create programs/software to solve problems using instructions written by humans | 1. Programmer writes code<br>2. Code tells computer what to do<br>3. Computer follows instructions exactly<br>4. Output is produced | Calculator app: user inputs 5 + 3 → program returns 8 | Python, Java, C++, VS Code, Git | Largest field |
+| **Artificial Intelligence (AI)** | Make computers perform tasks that normally require human thinking or decision making | 1. Input enters system<br>2. AI checks rules/logic/search methods<br>3. AI chooses best action<br>4. Output is returned | Chess AI chooses best move against player | Python, Prolog, OpenCV | Subset of CS |
+| **Machine Learning (ML)** | Make computers learn from past data to make future predictions | 1. Collect training data<br>2. Show correct answers<br>3. Model learns patterns<br>4. Predict new unseen data | Train email system using spam emails → predict new email as spam/not spam | Python, Scikit-learn, Pandas, NumPy | Subset of AI |
+| **Deep Learning (DL)** | Make computers learn complex data automatically using neural networks | 1. Collect large dataset<br>2. Build neural network layers<br>3. Train on large data<br>4. System automatically finds important features | Upload cat image → system predicts cat | Python, TensorFlow, PyTorch, CUDA, GPU | Subset of ML |
