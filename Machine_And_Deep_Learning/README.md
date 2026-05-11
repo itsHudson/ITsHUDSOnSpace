@@ -1,18 +1,19 @@
 <h1>Computer Science → AI → ML → DL</h1>
 
-<table style="width:100%; border-collapse: collapse; text-align: left;">
-  
-  <tr>
-    <th style="width:15%; white-space: nowrap; padding:10px;">Full Name</th>
-    <th style="width:20%; padding:10px;">What it does</th>
-    <th style="width:22%; padding:10px;">How it works</th>
-    <th style="width:18%; white-space: nowrap; padding:10px;">Specific Example</th>
-    <th style="width:15%; white-space: nowrap; padding:10px;">Tools / Software</th>
-    <th style="width:10%; white-space: nowrap; padding:10px;">Relationship</th>
-  </tr>
+<table style="width:100%; border-collapse: collapse;">
 
   <tr>
-    <td style="white-space: nowrap; padding:10px;">
+    <th style="padding:10px; white-space: nowrap;">Full Name</th>
+    <th style="padding:10px;">What it does</th>
+    <th style="padding:10px;">How it works</th>
+    <th style="padding:10px; white-space: nowrap;">Specific Example</th>
+    <th style="padding:10px; white-space: nowrap;">Tools / Software</th>
+    <th style="padding:10px; white-space: nowrap;">Relationship</th>
+  </tr>
+
+  <!-- Computer Science -->
+  <tr>
+    <td style="padding:10px; white-space: nowrap;">
       <b>Computer Science (CS)</b>
     </td>
     
@@ -27,21 +28,22 @@
       4. Produces output
     </td>
     
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       Calculator app: 5 + 3 → output 8
     </td>
     
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       Python, Java, C++, Git, VS Code
     </td>
     
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       Largest field
     </td>
   </tr>
 
+  <!-- AI -->
   <tr>
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       <b>Artificial Intelligence (AI)</b>
     </td>
     
@@ -56,21 +58,22 @@
       4. Returns output
     </td>
     
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       Chess AI selects best move
     </td>
     
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       Python, Prolog, OpenCV
     </td>
     
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       Subset of CS
     </td>
   </tr>
 
+  <!-- ML -->
   <tr>
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       <b>Machine Learning (ML)</b>
     </td>
     
@@ -85,21 +88,22 @@
       4. Predict new data
     </td>
     
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       Email spam detection
     </td>
     
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       Python, Scikit-learn, Pandas
     </td>
     
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       Subset of AI
     </td>
   </tr>
 
+  <!-- DL -->
   <tr>
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       <b>Deep Learning (DL)</b>
     </td>
     
@@ -114,15 +118,15 @@
       4. Predict output
     </td>
     
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       Cat image recognition
     </td>
     
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       PyTorch, TensorFlow, CUDA
     </td>
     
-    <td style="white-space: nowrap; padding:10px;">
+    <td style="padding:10px; white-space: nowrap;">
       Subset of ML
     </td>
   </tr>
