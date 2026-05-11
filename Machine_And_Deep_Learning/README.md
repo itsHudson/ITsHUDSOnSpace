@@ -1,8 +1,68 @@
-# Computer Science → AI → ML → DL
+<h1>Computer Science → AI → ML → DL</h1>
 
-| Full Name | What it does | How it works | Specific Example | Tools / Software | Relationship |
-|------------|--------------|---------------|------------------|------------------|---------------|
-| **Computer Science (CS)** | Create programs/software to solve problems using instructions written by humans | 1. Programmer writes code<br>2. Code tells computer what to do<br>3. Computer follows instructions exactly<br>4. Output is produced | Calculator app: user inputs 5 + 3 → program returns 8 | Python, Java, C++, VS Code, Git | Largest field |
-| **Artificial Intelligence (AI)** | Make computers perform tasks that normally require human thinking or decision making | 1. Input enters system<br>2. AI checks rules/logic/search methods<br>3. AI chooses best action<br>4. Output is returned | Chess AI chooses best move against player | Python, Prolog, OpenCV | Subset of CS |
-| **Machine Learning (ML)** | Make computers learn from past data to make future predictions | 1. Collect training data<br>2. Show correct answers<br>3. Model learns patterns<br>4. Predict new unseen data | Train email system using spam emails → predict new email as spam/not spam | Python, Scikit-learn, Pandas, NumPy | Subset of AI |
-| **Deep Learning (DL)** | Make computers learn complex data automatically using neural networks | 1. Collect large dataset<br>2. Build neural network layers<br>3. Train on large data<br>4. System automatically finds important features | Upload cat image → system predicts cat | Python, TensorFlow, PyTorch, CUDA, GPU | Subset of ML |
+<table>
+  <tr>
+    <th width="15%">Full Name</th>
+    <th width="20%">What it does</th>
+    <th width="20%">How it works</th>
+    <th width="20%">Specific Example</th>
+    <th width="15%">Tools / Software</th>
+    <th width="10%">Relationship</th>
+  </tr>
+
+  <tr>
+    <td><b>Computer Science (CS)</b></td>
+    <td>Create programs/software to solve problems using human-written instructions</td>
+    <td>
+      1. Programmer writes code<br>
+      2. Computer reads code<br>
+      3. Executes instructions<br>
+      4. Produces output
+    </td>
+    <td>Calculator app: 5 + 3 → output 8</td>
+    <td>Python, Java, C++, Git, VS Code</td>
+    <td>Largest field</td>
+  </tr>
+
+  <tr>
+    <td><b>Artificial Intelligence (AI)</b></td>
+    <td>Make computers perform tasks that normally require human decision-making</td>
+    <td>
+      1. Input enters system<br>
+      2. AI checks rules/logic<br>
+      3. Chooses action<br>
+      4. Returns output
+    </td>
+    <td>Chess AI selects best move</td>
+    <td>Python, Prolog, OpenCV</td>
+    <td>Subset of CS</td>
+  </tr>
+
+  <tr>
+    <td><b>Machine Learning (ML)</b></td>
+    <td>Make computers learn from data to predict future results</td>
+    <td>
+      1. Collect data<br>
+      2. Train model<br>
+      3. Learn from examples<br>
+      4. Predict new data
+    </td>
+    <td>Email spam detection</td>
+    <td>Python, Scikit-learn, Pandas</td>
+    <td>Subset of AI</td>
+  </tr>
+
+  <tr>
+    <td><b>Deep Learning (DL)</b></td>
+    <td>Use neural networks to learn complex data automatically</td>
+    <td>
+      1. Prepare large dataset<br>
+      2. Build neural network<br>
+      3. Train model<br>
+      4. Predict output
+    </td>
+    <td>Cat image recognition</td>
+    <td>PyTorch, TensorFlow, CUDA</td>
+    <td>Subset of ML</td>
+  </tr>
+</table>
