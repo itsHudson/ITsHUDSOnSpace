@@ -1,39 +1,44 @@
-# Computer Science (CS)
+# Core Category Overview
 
-| Category | Details |
+| Category | Description |
 | --- | --- |
-| What it does | Write programs that follow exact instructions |
-| How it works | 1. Write code <br> 2. Computer runs exactly as written <br> 3. No learning or change |
-| Specific Example | Sort numbers [5,2,9] → [2,5,9] using sorting code |
-| Tools / Software | Python, Java, C++, Visual Studio Code, Git |
-| Relationship | Largest category (not a subset of others) |
+| **Computer Science (CS)** | Write programs that follow exact instructions |
+| **Artificial Intelligence (AI)** | Make computers choose actions using rules or logic |
+| **Machine Learning (ML)** | Make computers learn from data to make predictions |
+| **Deep Learning (DL)** | Make computers learn using neural networks with many layers |
 
-# Artificial Intelligence (AI)
+# How It Works
 
-| Category | Details |
+| Category | How It Works |
 | --- | --- |
-| What it does | Make computer choose an action (decision) using rules or logic |
-| How it works | 1. Define rules <br> 2. Input comes in <br> 3. System checks rules <br> 4. Output decision |
-| Specific Example | Rule-based chatbot: IF user says "hello" → reply "hi" |
-| Tools / Software | Python, Prolog, rule-based systems |
-| Relationship | Subset of CS |
+| **Computer Science (CS)** | 1. Write code → 2. Computer executes exactly as written → 3. No learning occurs |
+| **Artificial Intelligence (AI)** | 1. Define rules → 2. Input enters system → 3. Rules are checked → 4. Decision/output generated |
+| **Machine Learning (ML)** | 1. Collect training data → 2. Train model → 3. Find patterns → 4. Predict new data |
+| **Deep Learning (DL)** | 1. Prepare large dataset → 2. Build neural network → 3. Train model → 4. Automatically learn features |
 
-# Machine Learning (ML)
+# Real Examples
 
-| Category | Details |
+| Category | Example |
 | --- | --- |
-| What it does | Make computer learn from data to predict output |
-| How it works | 1. Collect data (input + correct answer) <br> 2. Train model <br> 3. Model finds pattern <br> 4. Use model to predict new data |
-| Specific Example | Spam classifier: Train with emails → predict spam or not |
-| Tools / Software | Python, Scikit-learn, Pandas, NumPy |
-| Relationship | Subset of AI |
+| **Computer Science (CS)** | Sorting numbers `[5,2,9] → [2,5,9]` |
+| **Artificial Intelligence (AI)** | Rule-based chatbot: IF user says `"hello"` → reply `"hi"` |
+| **Machine Learning (ML)** | Spam classifier: predict spam or not spam |
+| **Deep Learning (DL)** | Image recognition: input image → output `"cat"` |
 
-# Deep Learning (DL)
+# Tools / Software
 
-| Category | Details |
+| Category | Tools |
 | --- | --- |
-| What it does | Make computer learn using neural networks (many layers) |
-| How it works | 1. Prepare large dataset (images/text) <br> 2. Build neural network <br> 3. Train model <br> 4. Model learns features automatically |
-| Specific Example | Image recognition: Input image → output "cat" |
-| Tools / Software | Python, TensorFlow, PyTorch, GPU (CUDA) |
-| Relationship | Subset of ML |
+| **Computer Science (CS)** | Python, Java, C++, VS Code, Git |
+| **Artificial Intelligence (AI)** | Python, Prolog, Rule-based systems |
+| **Machine Learning (ML)** | Python, Scikit-learn, Pandas, NumPy |
+| **Deep Learning (DL)** | Python, TensorFlow, PyTorch, GPU (CUDA) |
+
+# Relationship Hierarchy
+
+| Category | Relationship |
+| --- | --- |
+| **Computer Science (CS)** | Largest category |
+| **Artificial Intelligence (AI)** | Subset of Computer Science |
+| **Machine Learning (ML)** | Subset of Artificial Intelligence |
+| **Deep Learning (DL)** | Subset of Machine Learning |
