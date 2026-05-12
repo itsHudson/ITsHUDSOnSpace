@@ -1,237 +1,589 @@
 # 7. IMPROVEMENT TECHNIQUES
 
-This section explains methods used to improve Machine Learning (ML) model performance after the first model is built.
+This section explains methods used to improve Machine Learning (ML) model performance after building the first model.
 
 Most first models are not perfect:
-- low accuracy
-- overfitting
-- underfitting
-- unstable predictions
-- slow training
 
-This section helps answer:
+- Low accuracy
+- Overfitting
+- Underfitting
+- Unstable predictions
+- Slow training
+- Weak features
 
-**"How do we improve a weak model and make it more reliable?"**
+This section answers:
+
+```text
+"How do we improve a weak model and make it more reliable?"
+```
 
 ---
 
-## 7.1 Feature Engineering
+## 7.1 Improvement Examples Used Throughout This Section
 
-**Purpose:** This section explains how to create better input data for the model. Models can only learn from the features they receive, so better features often lead to better predictions.
+This section introduces the examples reused throughout this topic.
 
-| Topic | Definition | How It Works | Example | Important Notes |
+| Example | ML Task | Problem | Improvement Goal | Real Use Case |
 | --- | --- | --- | --- | --- |
-| Feature Engineering | Creating, selecting, and transforming features | Create/remove/transform features | Price per square foot | Improves model quality |
-| Feature Creation | Create new useful variables | Combine raw data | Age + income ratio | Adds useful signals |
-| Feature Removal | Remove useless variables | Delete irrelevant data | Remove customer ID | Reduces noise |
-| Feature Transformation | Change feature format | Convert raw values | Date → month/year | Makes data usable |
+| House Price Prediction | Regression | Weak features | Improve price prediction | Real estate |
+| Spam Detection | Classification | Overfitting | Better generalization | Gmail |
+| Fraud Detection | Classification | Imbalanced data | Better detection | Banking |
+| Image Classification | Deep Learning | Small dataset | Improve accuracy | Computer vision |
 
 ---
 
-## 7.2 Feature Scaling
+# 7.2 Feature Engineering
 
-**Purpose:** This section explains how to make feature values similar in size so that one feature does not unfairly dominate another feature.
+This section explains how to create better input features.
 
-| Topic | Definition | How It Works | Example | Important Notes |
+Better features often improve model performance more than changing algorithms.
+
+---
+
+## 7.2.1 Feature Engineering Methods
+
+| Method | Meaning | Example | Benefit | Risk |
 | --- | --- | --- | --- | --- |
-| Feature Scaling | Adjust values into similar ranges | Scale large/small values | Age vs salary | Helps fair learning |
-| Why Needed | Prevent large values dominating | Equal importance | Income = 100000 | Important for many models |
+| Feature Creation | Create new features | Price per sqft | Better signal | Wrong assumptions |
+| Feature Removal | Remove useless features | Remove customer ID | Less noise | Remove useful info |
+| Feature Transformation | Change format | Date → Month | Easier learning | Data loss |
 
 ---
 
-## 7.3 Normalization
+## 7.2.2 Example A: House Price Feature Engineering (Detailed)
 
-**Purpose:** This section explains one type of feature scaling that converts values into a fixed range, usually between 0 and 1.
+```text
+Original features:
+- House size
+- Total price
 
-| Topic | Definition | How It Works | Example | Important Notes |
-| --- | --- | --- | --- | --- |
-| Normalization | Scales values between 0 and 1 | Uses min-max scaling | Age → 0.65 | Common scaling method |
-| Formula | `(x-min)/(max-min)` | Converts range | 0 to 1 output | Easy interpretation |
+Problem:
+Model ignores pricing efficiency
 
----
+Improvement:
+Create new feature:
+Price per square foot
 
-## 7.4 Standardization
-
-**Purpose:** This section explains another scaling method that converts data into a standard format with mean = 0 and standard deviation = 1.
-
-| Topic | Definition | How It Works | Example | Important Notes |
-| --- | --- | --- | --- | --- |
-| Standardization | Converts data to mean = 0 and standard deviation = 1 | Centers data | Salary values | Common in ML |
-| Formula | `(x-mean)/standard deviation` | Standard scale | Around 0 | Useful for normal distributions |
+Result:
+Better house pricing predictions
+```
 
 ---
 
-## 7.5 Cross Validation (CV)
+## 7.2.3 Example B: Fraud Feature Engineering (Detailed)
 
-**Purpose:** This section explains how to evaluate models more reliably by testing them multiple times on different dataset splits.
+```text
+Original features:
+- Transaction amount
 
-| Topic | Definition | How It Works | Example | Important Notes |
-| --- | --- | --- | --- | --- |
-| Cross Validation (CV) | Evaluates model using multiple splits | Train/test repeatedly | 5-fold CV | More reliable evaluation |
-| Goal | Reduce overfitting risk | Better validation | Stable scores | Common technique |
+Improvement:
+Add:
+- Transaction frequency
+- Location change
+- Time difference
+
+Result:
+Better fraud detection
+```
 
 ---
 
-## 7.5.1 K-Fold Cross Validation
+# 7.3 Feature Scaling
 
-**Purpose:** This subsection explains the most common type of cross validation.
+This section explains making features similar in size.
+
+Some algorithms struggle when feature values are very different.
+
+---
+
+## 7.3.1 Example A: Salary vs Age Problem
+
+```text
+Age:
+25
+
+Salary:
+100,000
+
+Problem:
+Salary dominates model learning
+
+Solution:
+Scale both features
+```
+
+---
+
+## 7.3.2 Step-by-Step Scaling Flow
+
+```text
+1. Detect large feature differences
+2. Apply scaling
+3. Retrain model
+4. Improve performance
+```
+
+---
+
+# 7.4 Normalization
+
+This section explains scaling values between 0 and 1.
+
+---
+
+## 7.4.1 Normalization Formula
+
+```text
+(x - min) / (max - min)
+```
+
+---
+
+## 7.4.2 Example A: Age Normalization (Detailed)
+
+```text
+Original age:
+65
+
+Dataset age range:
+20 → 80
+
+Normalized result:
+0.75
+```
+
+---
+
+# 7.5 Standardization
+
+This section explains scaling values around mean = 0.
+
+---
+
+## 7.5.1 Standardization Formula
+
+```text
+(x - mean) / standard deviation
+```
+
+---
+
+## 7.5.2 Example A: Salary Standardization (Detailed)
+
+```text
+Original salary:
+RM8,000
+
+Dataset mean:
+RM5,000
+
+After standardization:
+Positive value above average
+```
+
+---
+
+# 7.6 Cross Validation (CV)
+
+This section explains more reliable evaluation.
+
+Instead of testing once, test multiple times.
+
+---
+
+## 7.6.1 Cross Validation Process
+
+```text
+1. Split dataset multiple times
+2. Train model
+3. Validate model
+4. Repeat
+5. Average results
+```
+
+---
+
+## 7.6.2 Example A: House Price Cross Validation
+
+```text
+Dataset:
+1,000 houses
+
+Split 1:
+Train/Test
+
+Split 2:
+Train/Test
+
+Split 3:
+Train/Test
+
+Final average accuracy calculated
+```
+
+---
+
+# 7.7 K-Fold Cross Validation
+
+This section explains the most common cross-validation method.
+
+---
+
+## 7.7.1 K-Fold Process
 
 | Step | Process | Input | Output | Purpose |
 | --- | --- | --- | --- | --- |
 | 1 | Split dataset | Full dataset | K groups | Create folds |
-| 2 | Train model | K-1 groups | Trained model | Learn |
-| 3 | Validate model | Remaining group | Validation score | Evaluate |
-| 4 | Repeat process | Different folds | Multiple scores | Better reliability |
-| 5 | Average scores | All results | Final score | Final evaluation |
+| 2 | Train model | K-1 groups | Model | Learn |
+| 3 | Validate | Remaining fold | Score | Evaluate |
+| 4 | Repeat | Different folds | Multiple scores | Reliability |
+| 5 | Average | All scores | Final score | Better evaluation |
 
 ---
 
-## 7.6 Hyperparameter Tuning
+## 7.7.2 Example A: 5-Fold Validation (Detailed)
 
-**Purpose:** This section explains how to find the best model settings to improve performance.
+```text
+Dataset:
+1000 rows
 
-| Topic | Definition | How It Works | Example | Important Notes |
+Split into:
+5 groups of 200
+
+Train on:
+800 rows
+
+Validate on:
+200 rows
+
+Repeat 5 times
+```
+
+---
+
+# 7.8 Hyperparameter Tuning
+
+This section explains finding better model settings.
+
+Hyperparameters are settings chosen before training.
+
+---
+
+## 7.8.1 Common Hyperparameters
+
+| Hyperparameter | Example | Affects | Model Type | Importance |
 | --- | --- | --- | --- | --- |
-| Hyperparameter Tuning | Finding best model settings | Test different settings | Tree depth | Improves performance |
-| Examples | Learning rate, batch size | Try multiple values | Neural network tuning | Common task |
+| Learning Rate | 0.01 | Training speed | Neural Networks | High |
+| Tree Depth | 10 | Complexity | Decision Trees | High |
+| Batch Size | 64 | Training speed | Deep Learning | Medium |
 
 ---
 
-## 7.7 Grid Search
+## 7.8.2 Example A: Decision Tree Tuning
 
-**Purpose:** This section explains a tuning method that tests every possible parameter combination.
+```text
+Depth = 2:
+Underfitting
 
-| Topic | Definition | How It Works | Example | Important Notes |
+Depth = 100:
+Overfitting
+
+Depth = 10:
+Balanced model
+```
+
+---
+
+# 7.9 Grid Search
+
+This section explains exhaustive hyperparameter testing.
+
+---
+
+## 7.9.1 Example A: Grid Search (Detailed)
+
+```text
+Test combinations:
+
+Learning Rate:
+0.01
+0.1
+
+Tree Depth:
+5
+10
+
+Total combinations:
+4
+
+Best combination selected
+```
+
+---
+
+# 7.10 Random Search
+
+This section explains random hyperparameter testing.
+
+Faster than Grid Search.
+
+---
+
+## 7.10.1 Example A: Random Search (Detailed)
+
+```text
+Instead of testing all 100 combinations
+
+Model randomly tests:
+10 combinations
+
+Finds good settings faster
+```
+
+---
+
+# 7.11 Ensemble Methods
+
+This section explains combining multiple models.
+
+Multiple weak models can create one stronger model.
+
+---
+
+## 7.11.1 Ensemble Types
+
+| Method | How It Works | Example | Benefit | Risk |
 | --- | --- | --- | --- | --- |
-| Grid Search | Tests all parameter combinations | Exhaustive search | Tree depth + learning rate | Accurate but slow |
-| Best For | Small parameter space | Limited combinations | Small datasets | Computationally expensive |
+| Voting | Multiple models vote | Classification | Better accuracy | Slower |
+| Averaging | Average predictions | Regression | Stable output | More computation |
 
 ---
 
-## 7.8 Random Search
+## 7.11.2 Example A: House Prediction Ensemble
 
-**Purpose:** This section explains a faster tuning method that tests random parameter combinations.
+```text
+Model A predicts:
+RM500,000
 
-| Topic | Definition | How It Works | Example | Important Notes |
+Model B predicts:
+RM520,000
+
+Model C predicts:
+RM510,000
+
+Final average:
+RM510,000
+```
+
+---
+
+# 7.12 Bagging (Bootstrap Aggregating)
+
+This section explains independent model training.
+
+---
+
+## 7.12.1 Example A: Random Forest Bagging
+
+```text
+1. Create multiple datasets
+
+2. Train multiple decision trees
+
+3. Combine predictions
+
+Result:
+Better stability
+```
+
+---
+
+# 7.13 Boosting
+
+This section explains sequential learning.
+
+Each new model fixes previous mistakes.
+
+---
+
+## 7.13.1 Example A: Gradient Boosting (Detailed)
+
+```text
+Model 1:
+Makes mistakes
+
+Model 2:
+Fixes previous mistakes
+
+Model 3:
+Improves again
+
+Final model:
+Higher accuracy
+```
+
+---
+
+# 7.14 Regularization
+
+This section explains reducing overfitting.
+
+---
+
+## 7.14.1 Regularization Types
+
+| Type | Full Form | How It Works | Example | Result |
 | --- | --- | --- | --- | --- |
-| Random Search | Tests random parameter combinations | Random sampling | Random tree depth | Faster than grid search |
-| Best For | Large parameter space | Many combinations | Deep learning tuning | Saves time |
+| L1 Regularization | Lasso | Removes weak features | Feature selection | Simpler model |
+| L2 Regularization | Ridge | Shrinks weights | House pricing | Reduces overfitting |
 
 ---
 
-## 7.9 Ensemble Methods
+## 7.14.2 Example A: Overfitting Fix
 
-**Purpose:** This section explains how combining multiple models can create a stronger final model.
+```text
+Model memorizes training data
 
-| Topic | Definition | How It Works | Example | Important Notes |
+Apply Ridge Regression
+
+Model becomes simpler
+
+Test accuracy improves
+```
+
+---
+
+# 7.15 Early Stopping
+
+This section explains stopping training before overfitting happens.
+
+---
+
+## 7.15.1 Example A: Neural Network Training
+
+```text
+Epoch 10:
+Validation improves
+
+Epoch 20:
+Validation improves
+
+Epoch 30:
+Validation gets worse
+
+Stop training at epoch 20
+```
+
+---
+
+# 7.16 Data Augmentation
+
+This section explains creating more training data.
+
+Very common in image learning.
+
+---
+
+## 7.16.1 Example A: Image Augmentation
+
+```text
+Original image:
+Cat image
+
+Create:
+- Rotated image
+- Flipped image
+- Brightness adjusted image
+
+Dataset becomes larger
+```
+
+---
+
+# 7.17 Dimensionality Reduction
+
+This section explains reducing unnecessary features.
+
+---
+
+## 7.17.1 Example A: Customer Dataset
+
+```text
+Original features:
+500 columns
+
+Problem:
+Too slow
+
+Apply Principal Component Analysis (PCA)
+
+Reduce to:
+50 important features
+```
+
+---
+
+# 7.18 Improvement Technique Selection Guide
+
+This section helps choose the right fix.
+
+| Problem | Solution | Example | Why It Works | Result |
 | --- | --- | --- | --- | --- |
-| Ensemble Methods | Combine multiple models | Voting/averaging predictions | Random Forest | Improves accuracy |
-| Goal | Reduce single model weakness | Stronger predictions | Fraud detection | Common technique |
+| Overfitting | Regularization | Ridge | Reduce complexity | Better generalization |
+| Underfitting | Better model | Deeper tree | Learn better | Higher accuracy |
+| Weak features | Feature engineering | New features | Better inputs | Better predictions |
+| Unstable results | Cross validation | K-Fold | Reliable evaluation | Stable model |
+| Small dataset | Data augmentation | More images | More training data | Better performance |
 
 ---
 
-## 7.10 Bagging
+# 7.19 Real-World Example: House Price Model Improvement
 
-**Purpose:** This section explains an ensemble method that trains models independently.
-
-| Topic | Definition | How It Works | Example | Important Notes |
-| --- | --- | --- | --- | --- |
-| Bagging | Train models independently | Different random datasets | Random Forest | Reduces variance |
-| Full Form | Bootstrap Aggregating | Combine predictions | Tree models | Common interview question |
-
----
-
-## 7.11 Boosting
-
-**Purpose:** This section explains an ensemble method that trains models sequentially to fix previous errors.
-
-| Topic | Definition | How It Works | Example | Important Notes |
-| --- | --- | --- | --- | --- |
-| Boosting | Train models sequentially | Fix previous errors | Gradient Boosting | Improves accuracy |
-| Goal | Focus on difficult examples | Better performance | XGBoost | Powerful method |
-
----
-
-## 7.12 Regularization
-
-**Purpose:** This section explains how to reduce model complexity to prevent overfitting.
-
-| Topic | Definition | How It Works | Example | Important Notes |
-| --- | --- | --- | --- | --- |
-| Regularization | Reduces model complexity | Penalizes large weights | Ridge Regression | Prevents overfitting |
-| L1 Regularization | Removes features | Some weights become zero | Lasso | Feature selection |
-| L2 Regularization | Shrinks weights | Smaller weights | Ridge | Keeps all features |
-
----
-
-## 7.13 Early Stopping
-
-**Purpose:** This section explains how to stop training before the model starts overfitting.
-
-| Topic | Definition | How It Works | Example | Important Notes |
-| --- | --- | --- | --- | --- |
-| Early Stopping | Stops training before overfitting | Monitor validation score | Neural networks | Prevents over-training |
-| Trigger | Validation worsens | Stop training | Best epoch | Saves time |
-
----
-
-## 7.14 Data Augmentation
-
-**Purpose:** This section explains how to create more training data when original data is limited.
-
-| Topic | Definition | How It Works | Example | Important Notes |
-| --- | --- | --- | --- | --- |
-| Data Augmentation | Create extra training data | Modify existing data | Rotate images | Common in deep learning |
-| Goal | Increase dataset size | More training examples | Image recognition | Helps small datasets |
-
----
-
-## 7.15 Dimensionality Reduction
-
-**Purpose:** This section explains how to reduce unnecessary features while keeping important information.
-
-| Topic | Definition | How It Works | Example | Important Notes |
-| --- | --- | --- | --- | --- |
-| Dimensionality Reduction | Reduce number of features | Keep important information | Principal Component Analysis (PCA) | Reduces complexity |
-| Goal | Faster training | Less noise | Large datasets | Useful for many features |
-
----
-
-## 7.16 Improvement Technique Selection Guide
-
-**Purpose:** This section helps you choose the correct improvement method based on your model problem.
-
-| Problem | Solution | Example | Why It Helps | Notes |
-| --- | --- | --- | --- | --- |
-| Overfitting | Regularization | Ridge | Reduces complexity | Common fix |
-| Underfitting | Better model | Deeper tree | Learns better | Common fix |
-| Poor features | Feature engineering | New variables | Better inputs | Important |
-| Unstable results | Cross validation | K-fold | Better evaluation | Reliable |
-| Slow tuning | Random search | Random parameters | Saves time | Faster |
-
----
-
-## 7.17 Real World Example
-
-**Purpose:** This section connects all improvement techniques to a real business scenario.
-
-### House Price Prediction Improvement
+This section connects everything.
 
 | Problem | Solution | Result | Example | Outcome |
 | --- | --- | --- | --- | --- |
-| Poor features | Feature engineering | Better inputs | Price per sqft | Better accuracy |
-| Overfitting | Regularization | Better generalization | Ridge | Stable predictions |
-| Weak model | Ensemble method | Stronger predictions | Random Forest | Higher accuracy |
+| Weak features | Feature engineering | Better signals | Price/sqft | Better predictions |
+| Overfitting | Regularization | Better generalization | Ridge | Stable model |
+| Weak algorithm | Ensemble | Stronger predictions | Random Forest | Higher accuracy |
 
 ---
 
-## 7.18 Final Summary
+## 7.19.1 Full Improvement Flow
 
-**Purpose:** This section summarizes when and why improvement techniques are used.
+```text
+Build First Model
+→ Detect Problems
+→ Choose Fix
+→ Retrain Model
+→ Evaluate Again
+→ Deploy Better Model
+```
 
-| Question | Answer | Example | Notes | Importance |
-| --- | --- | --- | --- | --- |
-| How improve model performance? | Better data + better tuning | House pricing | Continuous process | Very important |
-| Why use scaling? | Fair feature comparison | Age vs salary | Important for some models | Common |
-| Why use regularization? | Prevent overfitting | Ridge/Lasso | Better generalization | Critical |
-| Why use ensemble methods? | Combine strengths | Random Forest | Higher accuracy | Powerful |
+---
+
+# 7.20 Final Summary
+
+This section summarizes improvement techniques.
+
+```text
+Weak Model
+→ Better Features
+→ Better Tuning
+→ Better Validation
+→ Better Model
+```
+
+Core lesson:
+
+```text
+Improving ML models is iterative.
+```
+
+You rarely build a perfect model on the first attempt.
+
+Next topic:
+
+```text
+Deployment & Usage
+```
