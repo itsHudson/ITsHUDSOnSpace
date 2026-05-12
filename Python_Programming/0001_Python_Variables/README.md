@@ -1,6 +1,6 @@
 # Python Lesson — What are Variables in Python?
 
-## 1. What is a Variable?
+# 1. What is a Variable?
 
 This section explains what a variable is in Python and why it is one of the most important basic concepts in programming.
 
