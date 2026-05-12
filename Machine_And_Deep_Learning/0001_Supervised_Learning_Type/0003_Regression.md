@@ -66,8 +66,6 @@ Regression answers:
 
 # 3A. TYPES OF REGRESSION
 
----
-
 ## 3.5 Simple Regression
 
 | Topic | Definition | How It Works | Example | Important Notes |
@@ -96,8 +94,6 @@ Regression answers:
 ---
 
 # 3B. REGRESSION ALGORITHMS
-
----
 
 ## 3.8 Linear Regression (LR)
 
@@ -165,8 +161,6 @@ Regression answers:
 
 # 3C. REGRESSION OUTPUT TYPES
 
----
-
 ## 3.16 Numeric Output
 
 | Output Type | Definition | Example | Why Important | Notes |
@@ -187,8 +181,6 @@ Regression answers:
 ---
 
 # 3D. REGRESSION EVALUATION METRICS
-
----
 
 ## 3.18 Mean Absolute Error (MAE)
 
@@ -223,8 +215,6 @@ Regression answers:
 ---
 
 # 3E. REGRESSION USE CASES
-
----
 
 ## 3.22 House Price Prediction
 
@@ -266,7 +256,7 @@ Regression answers:
 
 ---
 
-# 3.27 Regression vs Classification
+## 3.27 Regression vs Classification
 
 | Feature | Regression | Classification | Difference | Example |
 | --- | --- | --- | --- | --- |
