@@ -597,9 +597,3 @@ Input
 → Optimization
 → Improvement
 ```
-
-Next topic:
-
-```text
-Model Evaluation Metrics
-```
