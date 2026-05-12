@@ -20,7 +20,7 @@ This section answers:
 
 ---
 
-## 6.1 Problem Examples Used Throughout This Section
+# 6.1 Problem Examples Used Throughout This Section
 
 This section introduces the examples reused throughout this topic.
 
