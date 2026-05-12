@@ -19,7 +19,7 @@ This section answers:
 
 ---
 
-## 7.1 Improvement Examples Used Throughout This Section
+# 7.1 Improvement Examples Used Throughout This Section
 
 This section introduces the examples reused throughout this topic.
 
