@@ -1,23 +1,25 @@
 # 2. CLASSIFICATION (PREDICT CATEGORIES / LABELS / DECISIONS)
 
-This section explains Classification, one of the two major branches of Supervised Learning.
+This section explains how Classification works in Supervised Learning. Classification is used when the model needs to predict a fixed category, label, class, or decision instead of a continuous number.
 
 Classification predicts:
 
-- Categories
-- Labels
-- Decisions
-- Classes
-
-Instead of predicting numerical values.
+```text
+Category
+Label
+Decision
+Class
+```
 
 ---
 
 ## 2.1 Classification Examples Used Throughout This Section
 
-To make learning easier, we will repeatedly use two examples:
+This section introduces the main examples that will be reused throughout the classification topic so beginners can connect every concept to real situations.
 
 ### 2.1.1 Example A: Email Spam Detection
+
+This example shows binary classification because the model only chooses between two possible categories.
 
 ```text
 Input: Email content
@@ -29,6 +31,8 @@ Type: Binary Classification
 
 ### 2.1.2 Example B: Animal Image Classification
 
+This example shows multi-class classification because the model chooses one category from more than two possible classes.
+
 ```text
 Input: Animal image
 Output: Cat / Dog / Bird
@@ -39,11 +43,11 @@ Type: Multi-Class Classification
 
 # 2.2 What is Classification?
 
-Classification predicts which category an input belongs to.
-
----
+This section explains the basic meaning of classification and how it connects input data to category-based output.
 
 ## 2.2.1 Core Formula
+
+This section shows the basic formula behind classification.
 
 ```text
 Input (X) → Model → Category Output (Y)
@@ -57,6 +61,8 @@ f(X) = Y
 
 ## 2.2.2 What Classification Predicts
 
+This section shows examples of category-based outputs.
+
 | Input | Output |
 | --- | --- |
 | Email | Spam |
@@ -67,6 +73,8 @@ f(X) = Y
 ---
 
 ## 2.2.3 Step-by-Step Classification Process
+
+This section explains the general flow of how classification works.
 
 ```text
 1. Collect labeled historical data
@@ -80,6 +88,8 @@ f(X) = Y
 
 ## 2.2.4 Example
 
+This section shows simple classification predictions.
+
 ### Spam Example
 
 ```text
@@ -89,8 +99,6 @@ Input:
 Prediction:
 Spam
 ```
-
----
 
 ### Animal Example
 
@@ -106,11 +114,11 @@ Cat
 
 # 2.3 Why Classification is Important
 
-Classification helps automate repetitive decision-making.
-
----
+This section explains why classification is useful for real-world decision-making problems.
 
 ## 2.3.1 Business Problems Solved
+
+This section shows problems that classification can automate.
 
 | Problem | Manual Method | Classification Solution |
 | --- | --- | --- |
@@ -123,6 +131,8 @@ Classification helps automate repetitive decision-making.
 
 ## 2.3.2 Step-by-Step Business Flow
 
+This section explains how classification is used in business systems.
+
 ```text
 1. Business has repetitive decisions
 2. Historical decision data exists
@@ -134,6 +144,8 @@ Classification helps automate repetitive decision-making.
 ---
 
 ## 2.3.3 Example
+
+This section shows how classification reduces manual work.
 
 ```text
 10,000 loan applications arrive
@@ -149,11 +161,11 @@ Reject
 
 # 2.4 Classification Input Components
 
-This section explains what classification needs before training begins.
-
----
+This section explains the data components needed before a classification model can be trained.
 
 ## 2.4.1 Features
+
+This section explains the input variables used by a classification model.
 
 | Feature | Spam Example | Animal Example |
 | --- | --- | --- |
@@ -166,6 +178,8 @@ This section explains what classification needs before training begins.
 
 ## 2.4.2 Labels
 
+This section explains the correct category answers used during training.
+
 | Input | Label |
 | --- | --- |
 | Email | Spam |
@@ -174,6 +188,8 @@ This section explains what classification needs before training begins.
 ---
 
 ## 2.4.3 Dataset Splitting
+
+This section explains how data is divided for learning and evaluation.
 
 | Dataset Type | Purpose |
 | --- | --- |
@@ -184,6 +200,8 @@ This section explains what classification needs before training begins.
 ---
 
 ## 2.4.4 Step-by-Step Data Preparation
+
+This section explains how raw data becomes usable training data.
 
 ```text
 1. Collect raw data
@@ -197,14 +215,14 @@ This section explains what classification needs before training begins.
 
 ## 2.4.5 Example
 
+This section shows how labeled classification datasets look.
+
 ### Spam Dataset
 
 ```text
 "Free money" → Spam
 "Meeting tomorrow" → Not Spam
 ```
-
----
 
 ### Animal Dataset
 
@@ -218,11 +236,11 @@ Bird image → Bird
 
 # 2.5 Types of Classification
 
----
+This section explains the main types of classification based on how many outputs the model can predict.
 
 ## 2.5.1 Binary Classification
 
-Only two possible outputs.
+This section explains classification problems with only two possible outputs.
 
 ```text
 Yes / No
@@ -240,7 +258,7 @@ Email → Spam / Not Spam
 
 ## 2.5.2 Multi-Class Classification
 
-Many classes but only one final output.
+This section explains classification problems with more than two possible outputs, where only one final class is selected.
 
 ```text
 Cat
@@ -258,7 +276,7 @@ Animal image → Dog
 
 ## 2.5.3 Multi-Label Classification
 
-One input can have multiple labels.
+This section explains classification problems where one input can have multiple correct labels.
 
 Example:
 
@@ -269,6 +287,8 @@ Image → Dog + Tree + Car
 ---
 
 ## 2.5.4 Step-by-Step Type Selection
+
+This section explains how to choose the correct classification type.
 
 ```text
 1. Identify number of outputs
@@ -281,11 +301,11 @@ Image → Dog + Tree + Car
 
 # 2.6 How Classification Training Works
 
-This section explains how the model learns.
-
----
+This section explains how a classification model learns patterns from labeled examples.
 
 ## 2.6.1 Training Formula
+
+This section shows the basic training cycle.
 
 ```text
 Input → Prediction → Error → Update → Repeat
@@ -294,6 +314,8 @@ Input → Prediction → Error → Update → Repeat
 ---
 
 ## 2.6.2 Step-by-Step Training Process
+
+This section explains how the model learns from mistakes.
 
 ```text
 1. Input training data enters model
@@ -307,6 +329,8 @@ Input → Prediction → Error → Update → Repeat
 ---
 
 ## 2.6.3 Spam Example
+
+This section shows how a spam classifier learns from a wrong prediction.
 
 ```text
 Input:
@@ -326,6 +350,8 @@ Wrong → update model
 
 ## 2.6.4 Animal Example
 
+This section shows how an image classifier learns from a wrong prediction.
+
 ```text
 Input:
 Dog image
@@ -344,11 +370,11 @@ Wrong → update model
 
 # 2.7 Common Classification Algorithms
 
-This section explains commonly used algorithms.
-
----
+This section introduces common algorithms used to build classification models.
 
 ## 2.7.1 Logistic Regression
+
+This section explains a simple classification algorithm often used for binary decisions.
 
 Used for simple classification.
 
@@ -362,6 +388,8 @@ Loan approval
 
 ## 2.7.2 Decision Tree
 
+This section explains a rule-based classification algorithm that splits data using decision rules.
+
 Uses rule splitting.
 
 Example:
@@ -373,6 +401,8 @@ Student pass/fail
 ---
 
 ## 2.7.3 Random Forest
+
+This section explains an algorithm that combines many decision trees to improve prediction reliability.
 
 Combines multiple trees.
 
@@ -386,6 +416,8 @@ Fraud detection
 
 ## 2.7.4 SVM
 
+This section explains an algorithm that separates classes using the best decision boundary.
+
 Finds best decision boundary.
 
 Example:
@@ -397,6 +429,8 @@ Image classification
 ---
 
 ## 2.7.5 Naive Bayes
+
+This section explains a probability-based algorithm commonly used for text classification.
 
 Probability-based classification.
 
@@ -410,6 +444,8 @@ Spam detection
 
 ## 2.7.6 Neural Networks
 
+This section explains models that learn complex patterns using connected layers.
+
 Used for complex tasks.
 
 Example:
@@ -422,9 +458,11 @@ Face recognition
 
 # 2.8 Classification Output Types
 
----
+This section explains the different forms of output a classification model can produce.
 
 ## 2.8.1 Predicted Label
+
+This section explains the final category selected by the model.
 
 ```text
 Spam
@@ -433,6 +471,8 @@ Spam
 ---
 
 ## 2.8.2 Probability Score
+
+This section explains the model’s confidence for each category.
 
 ```text
 Spam = 95%
@@ -443,6 +483,8 @@ Not Spam = 5%
 
 ## 2.8.3 Ranking Output
 
+This section explains outputs where possible classes or items are sorted by likelihood.
+
 ```text
 Top product recommendations
 ```
@@ -450,6 +492,8 @@ Top product recommendations
 ---
 
 ## 2.8.4 Step-by-Step Prediction Flow
+
+This section explains how the model produces a final classification result.
 
 ```text
 1. New input arrives
@@ -462,13 +506,11 @@ Top product recommendations
 
 # 2.9 Evaluation Metrics
 
-This section explains how classification performance is measured.
-
----
+This section explains how classification model performance is measured.
 
 ## 2.9.1 Accuracy
 
-Measures overall correctness.
+This section explains the percentage of predictions that are correct.
 
 ```text
 95 correct out of 100
@@ -478,7 +520,7 @@ Measures overall correctness.
 
 ## 2.9.2 Precision
 
-Measures how many predicted positives are actually correct.
+This section explains how many predicted positive results are actually correct.
 
 Example:
 
@@ -490,7 +532,7 @@ Fraud detection
 
 ## 2.9.3 Recall
 
-Measures how many actual positives are found.
+This section explains how many actual positive cases the model successfully finds.
 
 Example:
 
@@ -502,17 +544,19 @@ Disease detection
 
 ## 2.9.4 F1 Score
 
-Balances precision and recall.
+This section explains the metric used to balance precision and recall.
 
 ---
 
 ## 2.9.5 Confusion Matrix
 
-Shows detailed prediction mistakes.
+This section explains the table used to inspect correct and wrong predictions.
 
 ---
 
 ## 2.9.6 Confusion Matrix Example
+
+This section shows how prediction results are categorized.
 
 | Actual | Predicted |
 | --- | --- |
@@ -525,6 +569,8 @@ Shows detailed prediction mistakes.
 
 ## 2.9.7 Step-by-Step Evaluation Flow
 
+This section explains how to evaluate a trained classification model.
+
 ```text
 1. Make predictions
 2. Compare actual labels
@@ -536,11 +582,11 @@ Shows detailed prediction mistakes.
 
 # 2.10 Common Problems in Classification
 
----
+This section explains common issues that cause poor classification performance.
 
 ## 2.10.1 Overfitting
 
-Model memorizes training data.
+This section explains when the model memorizes training data instead of learning general patterns.
 
 Example:
 
@@ -552,7 +598,7 @@ Only detects old spam patterns
 
 ## 2.10.2 Underfitting
 
-Model is too simple.
+This section explains when the model is too simple and fails to learn useful patterns.
 
 Example:
 
@@ -564,7 +610,7 @@ Fails to detect fraud
 
 ## 2.10.3 Imbalanced Dataset
 
-One class dominates.
+This section explains when one class appears much more often than another class.
 
 Example:
 
@@ -577,7 +623,7 @@ Example:
 
 ## 2.10.4 Noisy Labels
 
-Wrong labels exist.
+This section explains when wrong labels confuse the model during training.
 
 Example:
 
@@ -588,6 +634,8 @@ Spam email labeled as normal
 ---
 
 ## 2.10.5 Step-by-Step Problem Solving
+
+This section explains how to diagnose and improve classification problems.
 
 ```text
 1. Train model
@@ -601,6 +649,8 @@ Spam email labeled as normal
 
 # 2.11 Real-World Applications
 
+This section shows where classification is commonly used in real systems.
+
 | Industry | Input | Output |
 | --- | --- | --- |
 | Banking | Customer data | Approve/Reject |
@@ -613,6 +663,8 @@ Spam email labeled as normal
 
 ## 2.11.1 Real-World Workflow
 
+This section explains the general workflow for applying classification in real-world systems.
+
 ```text
 1. Collect business data
 2. Train model
@@ -624,11 +676,11 @@ Spam email labeled as normal
 
 # 2.12 End-to-End Example: Fraud Detection System
 
-This section connects everything together.
-
----
+This section connects all classification concepts into one full practical example.
 
 ## 2.12.1 Step 1: Collect Data
+
+This section explains the first step of gathering past transaction records.
 
 ```text
 Past transaction records
@@ -638,6 +690,8 @@ Past transaction records
 
 ## 2.12.2 Step 2: Add Labels
 
+This section explains how each transaction is marked with its correct class.
+
 ```text
 Fraud / Not Fraud
 ```
@@ -646,23 +700,37 @@ Fraud / Not Fraud
 
 ## 2.12.3 Step 3: Train Model
 
+This section explains how the classifier learns fraud patterns from labeled examples.
+
+```text
 Learn fraud patterns
+```
 
 ---
 
 ## 2.12.4 Step 4: Evaluate Model
 
-Check metrics
+This section explains how the trained model is tested using classification metrics.
+
+```text
+Check accuracy, precision, recall, F1 score, and confusion matrix
+```
 
 ---
 
 ## 2.12.5 Step 5: Deploy Model
 
+This section explains how the final model is placed into a real system.
+
+```text
 Real-time fraud detection
+```
 
 ---
 
 ## 2.12.6 Step 6: Predict New Transaction
+
+This section explains how the deployed model classifies new unseen transactions.
 
 ```text
 New transaction → Fraud
@@ -671,6 +739,8 @@ New transaction → Fraud
 ---
 
 ## 2.12.7 Full Pipeline
+
+This section summarizes the complete classification workflow.
 
 ```text
 Collect Data
@@ -687,6 +757,8 @@ Collect Data
 
 # 2.13 Classification vs Regression
 
+This section explains the main difference between classification and regression.
+
 | Classification | Regression |
 | --- | --- |
 | Predict categories | Predict numbers |
@@ -696,6 +768,8 @@ Collect Data
 ---
 
 # 2.14 Final Summary
+
+This section summarizes the most important classification ideas before moving to regression.
 
 Classification predicts categories, labels, or decisions.
 
