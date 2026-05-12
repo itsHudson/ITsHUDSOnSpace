@@ -24,7 +24,7 @@ Training answers:
 
 ---
 
-## 5.1 Training Examples Used Throughout This Section
+# 5.1 Training Examples Used Throughout This Section
 
 This section introduces the examples reused throughout the entire training topic.
 
