@@ -13,7 +13,7 @@ Instead of predicting continuous numerical values.
 
 ---
 
-## 2.1 Classification Examples Used Throughout This Section
+# 2.1 Classification Examples Used Throughout This Section
 
 This section introduces the detailed examples that will be reused throughout this topic.
 
