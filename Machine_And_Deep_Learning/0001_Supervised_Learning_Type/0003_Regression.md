@@ -1,288 +1,541 @@
 # 3. REGRESSION (PREDICT CONTINUOUS VALUES / ESTIMATION)
 
-This section explains **Regression**, which is another major type of **Supervised Learning (SL)**.
+This section explains **Regression**, the second major branch of **Supervised Learning (SL)**.
 
-Classification predicts **categories**
+Classification predicts:
 
-Example:
 - Spam / Not Spam
 - Approve / Reject
 
-Regression predicts **numbers**
+Regression predicts:
 
-Example:
 - House Price = RM500,000
 - Temperature = 32.5°C
+- Sales = 8,000 units
 
 Regression answers:
 
-**"What exact number should be predicted?"**
+```text
+"What exact numerical value should be predicted?"
+```
 
 ---
 
-## 3.1 What is Regression?
+## 3.1 Regression Examples Used Throughout This Section
 
-| Topic | Definition | How It Works | Example | Important Notes |
+This section introduces the examples reused throughout the entire regression topic.
+
+| Example | Input | Output | Regression Type | Real Use Case |
 | --- | --- | --- | --- | --- |
-| Regression | A supervised learning task that predicts continuous numeric values | Model learns relationship between input (X) and numeric output (Y) | House → RM500,000 | One of the two main supervised learning tasks |
-| Main Goal | Predict exact numerical values | Learn patterns from historical data | Salary prediction | Output must be a number |
-| Output Type | Continuous numeric output | Can produce decimal values | 32.5°C | Not fixed categories |
+| House Price Prediction | House details | RM500,000 | Multiple Regression | Real estate |
+| Salary Prediction | Experience + education | RM8,000/month | Simple/Multiple Regression | HR hiring |
+| Temperature Prediction | Weather data | 32.5°C | Time Trend Regression | Weather forecasting |
+| Sales Forecasting | Historical sales | 8,000 units | Forecasting Regression | Business planning |
+| Demand Forecasting | Customer demand history | 5,000 units | Forecasting Regression | Inventory planning |
 
 ---
 
-## 3.2 Simple Regression Flow
+# 3.2 What is Regression?
 
-| Step | Process | Input | Output | Purpose |
-| --- | --- | --- | --- | --- |
-| 1 | Collect data | House information | Dataset | Prepare training data |
-| 2 | Provide labels | House prices | Labeled dataset | Give correct answers |
-| 3 | Train model | Historical data | Trained model | Learn relationships |
-| 4 | Predict value | New house info | Predicted price | Estimate future value |
-| 5 | Evaluate model | Actual vs predicted values | Error score | Measure accuracy |
+This section explains the basic meaning of regression.
+
+Regression predicts continuous numerical values.
 
 ---
 
-## 3.3 Input and Output in Regression
+## 3.2.1 Core Formula
 
-| Component | Definition | Example | Output | Notes |
-| --- | --- | --- | --- | --- |
-| Input (X) | Information given to model | House size | Raw data | Features used for prediction |
-| Features | Individual variables | Size, location | Input variables | Multiple features possible |
-| Output (Y) | Numeric value model predicts | House price | RM500,000 | Continuous value |
-| Label | Correct answer during training | Actual house price | Ground truth | Required for training |
-| Prediction | Estimated value for new data | Future price | RM550,000 | Final output |
+This section explains the basic regression formula.
 
----
+```text
+Input (X) → Model → Numerical Output (Y)
+```
 
-## 3.4 Nature of Regression Problems
-
-| Topic | Definition | How It Works | Example | Notes |
-| --- | --- | --- | --- | --- |
-| Continuous Values | Output can be any number within a range | Model predicts flexible values | Salary prediction | Infinite possible values |
-| Exact Estimation | Precise values matter | Small differences matter | Temperature prediction | More precise than classification |
-| Trend Prediction | Learns patterns over time | Uses historical trends | Sales forecasting | Common business use |
+```text
+f(X) = Y
+```
 
 ---
 
-# 3A. TYPES OF REGRESSION
+## 3.2.2 Step-by-Step Regression Process
 
-## 3.5 Simple Regression
+This section explains the overall regression workflow.
 
-| Topic | Definition | How It Works | Example | Important Notes |
-| --- | --- | --- | --- | --- |
-| Simple Regression | Uses only one input feature | Model learns relationship between one X and one Y | House size → Price | Easiest regression type |
-| Straight Line Relationship | Often uses linear relationship | Fits best line | Study hours → marks | Common beginner example |
-
----
-
-## 3.6 Multiple Regression
-
-| Topic | Definition | How It Works | Example | Important Notes |
-| --- | --- | --- | --- | --- |
-| Multiple Regression | Uses multiple input features | Combines multiple variables to predict output | Size + location + age → price | Common in real business datasets |
-| Feature Weighting | Each feature gets importance weight | More important features affect output more | Salary prediction | Helps improve accuracy |
+```text
+1. Collect historical data
+2. Add correct numerical labels
+3. Train regression model
+4. Learn numerical relationships
+5. Predict future values
+```
 
 ---
 
-## 3.7 Polynomial Regression
+## 3.2.3 Example A: House Price Prediction (Detailed)
 
-| Topic | Definition | How It Works | Example | Important Notes |
-| --- | --- | --- | --- | --- |
-| Polynomial Regression | Models curved relationships | Uses higher-degree values | Temperature changes | Handles non-linear patterns |
-| Curve Fitting | Fits curves instead of straight lines | Captures complex trends | Population growth | More flexible than linear regression |
+```text
+1. New house data arrives:
+   - Size = 2,000 sqft
+   - Bedrooms = 4
+   - Location = Kuala Lumpur
+   - House age = 5 years
 
----
+2. Model extracts features
 
-# 3B. REGRESSION ALGORITHMS
+3. Model compares with historical house sales
 
-## 3.8 Linear Regression (LR)
+4. Model finds similar houses
 
-| Topic | Definition | How It Works | Example | Limitation |
-| --- | --- | --- | --- | --- |
-| Linear Regression (LR) | Basic regression model using straight line relationship | Finds best-fit line | Salary prediction | Cannot handle complex patterns |
+5. Model predicts:
+   RM850,000
 
----
-
-## 3.9 Polynomial Regression
-
-| Topic | Definition | How It Works | Example | Limitation |
-| --- | --- | --- | --- | --- |
-| Polynomial Regression | Uses curves for prediction | Adds squared/cubic terms | Growth trends | Can overfit |
+6. Real estate platform shows estimated price
+```
 
 ---
 
-## 3.10 Ridge Regression (L2)
+## 3.2.4 Example B: Temperature Prediction (Detailed)
 
-| Topic | Definition | How It Works | Example | Limitation |
-| --- | --- | --- | --- | --- |
-| Ridge Regression (L2) | Reduces overfitting by shrinking weights | Penalizes large weights | House price prediction | Keeps all features |
+```text
+1. Weather data enters system:
+   - Humidity = 85%
+   - Wind speed = 10 km/h
+   - Rainfall = Low
 
----
+2. Model compares historical weather patterns
 
-## 3.11 Lasso Regression (L1)
+3. Model predicts tomorrow temperature
 
-| Topic | Definition | How It Works | Example | Limitation |
-| --- | --- | --- | --- | --- |
-| Lasso Regression (L1) | Removes less important features | Some weights become zero | Feature selection | May remove useful features |
-
----
-
-## 3.12 Elastic Net
-
-| Topic | Definition | How It Works | Example | Limitation |
-| --- | --- | --- | --- | --- |
-| Elastic Net | Combines Ridge + Lasso | Uses both penalties | Large datasets | Requires tuning |
+4. Final prediction:
+   32.5°C
+```
 
 ---
 
-## 3.13 Decision Tree Regressor (DTR)
+# 3.3 Input and Output in Regression
 
-| Topic | Definition | How It Works | Example | Limitation |
+This section explains the required components.
+
+| Component | Definition | House Example | Salary Example | Why Important |
 | --- | --- | --- | --- | --- |
-| Decision Tree Regressor (DTR) | Tree-based regression model | Splits data into rules | House pricing | Can overfit |
+| Input (X) | Data given to model | House size | Experience | Features for prediction |
+| Features | Individual variables | Location | Education | Improve accuracy |
+| Output (Y) | Numerical value | House price | Salary | Final prediction |
+| Label | Correct answer during training | Actual price | Actual salary | Required |
+| Prediction | Future estimated value | RM850,000 | RM9,000 | Final output |
 
 ---
 
-## 3.14 Random Forest Regressor (RFR)
+## 3.3.1 Example A: Salary Prediction (Detailed)
 
-| Topic | Definition | How It Works | Example | Limitation |
-| --- | --- | --- | --- | --- |
-| Random Forest Regressor (RFR) | Uses multiple regression trees | Averages predictions | Sales prediction | Slower training |
+```text
+1. Employee profile:
+   - Experience = 5 years
+   - Degree = Master's
+   - Skills = Python + SQL
 
----
+2. Model compares previous employee salaries
 
-## 3.15 Gradient Boosting Regressor (GBR)
+3. Model predicts:
 
-| Topic | Definition | How It Works | Example | Limitation |
-| --- | --- | --- | --- | --- |
-| Gradient Boosting Regressor (GBR) | Improves errors step-by-step | New models fix old errors | Demand forecasting | Can be slow |
-
----
-
-# 3C. REGRESSION OUTPUT TYPES
-
-## 3.16 Numeric Output
-
-| Output Type | Definition | Example | Why Important | Notes |
-| --- | --- | --- | --- | --- |
-| Integer Output | Whole number output | Predict 100 sales | Easy interpretation | No decimals |
-| Decimal Output | Fraction values | Temperature = 32.5°C | More precise | Common |
-| Range Output | Predicted range | RM400k–RM450k | Useful for uncertainty | Less common |
+   RM9,500/month
+```
 
 ---
 
-## 3.17 Prediction Interpretation
+## 3.3.2 Example B: House Prediction (Detailed)
 
-| Topic | Definition | Example | Why Important | Notes |
-| --- | --- | --- | --- | --- |
-| Exact Value | Single prediction | RM500,000 | Direct decision-making | Most common |
-| Error Margin | Shows uncertainty | ±RM20,000 | Helps risk planning | Optional |
+```text
+1. User enters house details
 
----
+2. Features extracted:
+   - Size
+   - Location
+   - Bedrooms
+   - Age
 
-# 3D. REGRESSION EVALUATION METRICS
+3. Model predicts:
 
-## 3.18 Mean Absolute Error (MAE)
-
-| Topic | Definition | How It Works | Example | When to Use |
-| --- | --- | --- | --- | --- |
-| Mean Absolute Error (MAE) | Average absolute error | Measures average mistake | RM10,000 error | Easy interpretation |
-
----
-
-## 3.19 Mean Squared Error (MSE)
-
-| Topic | Definition | How It Works | Example | When to Use |
-| --- | --- | --- | --- | --- |
-| Mean Squared Error (MSE) | Average squared error | Punishes large mistakes | Large pricing errors | Large errors matter more |
+   RM780,000
+```
 
 ---
 
-## 3.20 Root Mean Squared Error (RMSE)
+# 3.4 Nature of Regression Problems
 
-| Topic | Definition | How It Works | Example | When to Use |
+This section explains how regression outputs behave.
+
+| Topic | Meaning | Example | Why Important | Notes |
 | --- | --- | --- | --- | --- |
-| Root Mean Squared Error (RMSE) | Square root of MSE | Returns original unit | RM20,000 | Easier interpretation |
+| Continuous Values | Any number within range | RM500,000 | Flexible output | Infinite possibilities |
+| Exact Estimation | Small differences matter | 32.5°C | Precision matters | More precise |
+| Trend Prediction | Learn historical trends | Sales forecasting | Business planning | Common use |
 
 ---
 
-## 3.21 R² Score (R-Squared Score)
+## 3.4.1 Example A: Sales Forecasting (Detailed)
 
-| Topic | Definition | How It Works | Example | When to Use |
-| --- | --- | --- | --- | --- |
-| R² Score | Measures how well model explains data | Value between 0 and 1 | 0.85 | Model performance evaluation |
+```text
+1. Business checks last 12 months sales
 
----
+2. Model identifies:
+   - Holiday spikes
+   - Seasonal drops
 
-# 3E. REGRESSION USE CASES
+3. Predicts next month sales
 
-## 3.22 House Price Prediction
-
-| Input | Process | Output | Business Use | Example |
-| --- | --- | --- | --- | --- |
-| Size, location | Train regression model | House price | Real estate | RM500,000 |
-
----
-
-## 3.23 Sales Forecasting
-
-| Input | Process | Output | Business Use | Example |
-| --- | --- | --- | --- | --- |
-| Historical sales | Learn trends | Future sales | Business planning | Next month sales |
+4. Final output:
+   8,500 units
+```
 
 ---
 
-## 3.24 Stock Price Prediction
+## 3.4.2 Example B: Stock Price Prediction (Detailed)
 
-| Input | Process | Output | Business Use | Example |
-| --- | --- | --- | --- | --- |
-| Past stock prices | Learn patterns | Future price | Investment analysis | RM120.50 |
+```text
+1. Historical stock prices collected
 
----
+2. Model learns price movement trends
 
-## 3.25 Temperature Prediction
+3. Predicts tomorrow stock price
 
-| Input | Process | Output | Business Use | Example |
-| --- | --- | --- | --- | --- |
-| Weather data | Learn weather patterns | Future temperature | Forecasting | 32.5°C |
-
----
-
-## 3.26 Demand Forecasting
-
-| Input | Process | Output | Business Use | Example |
-| --- | --- | --- | --- | --- |
-| Historical demand | Predict future demand | Product quantity | Inventory planning | 5,000 units |
+4. Final prediction:
+   RM120.50
+```
 
 ---
 
-# 3F. Overview
+# 3.5 Types of Regression
 
-## 3.27 Regression vs Classification
-| Feature | Regression | Classification | Difference | Example |
+This section explains common regression problem structures.
+
+| Type | Input Features | Output | Example | Use Case |
 | --- | --- | --- | --- | --- |
-| Output | Number | Category | Main difference | House price vs Spam |
-| Goal | Estimate exact value | Choose class | Different tasks | Salary vs Fraud |
-| Example Output | RM500,000 | Approve/Reject | Numeric vs Label | Core difference |
+| Simple Regression | One feature | One value | Study hours → marks | Beginner |
+| Multiple Regression | Multiple features | One value | House price | Most common |
+| Polynomial Regression | Non-linear relationship | One value | Population growth | Curved patterns |
 
 ---
 
-## 3.28 Common Problems in Regression
+## 3.5.1 Example A: Simple Regression (Detailed)
 
-| Problem | Definition | Cause | Example | Solution |
-| --- | --- | --- | --- | --- |
-| Overfitting | Model memorizes data | Model too complex | Bad future prediction | Regularization |
-| Underfitting | Model too simple | Weak learning | Poor accuracy | Better model |
-| Outliers | Extreme values | Unusual data | RM50M house | Data cleaning |
-| Missing Data | Incomplete inputs | Poor collection | Missing salary | Imputation |
+```text
+1. Student studies 6 hours
+
+2. Model learned:
+
+More study hours → higher marks
+
+3. Predicts:
+
+85 marks
+```
 
 ---
 
-## 3.29 Final Summary
+## 3.5.2 Example B: Multiple Regression (Detailed)
 
-| Question | Answer | Example | Notes | Importance |
+```text
+1. House input:
+   - Size
+   - Location
+   - Bedrooms
+   - Age
+
+2. Model combines all features
+
+3. Predicts:
+
+RM900,000
+```
+
+---
+
+## 3.5.3 Example C: Polynomial Regression (Detailed)
+
+```text
+1. Historical population growth data collected
+
+2. Model detects curved growth pattern
+
+3. Predicts future population:
+
+2.5 million people
+```
+
+---
+
+# 3.6 Common Regression Algorithms
+
+This section explains commonly used algorithms.
+
+| Algorithm | Full Form | How It Works | Example | Limitation |
 | --- | --- | --- | --- | --- |
-| What does regression do? | Predict numbers | House price | Core supervised learning task | Very important |
-| What output does it give? | Continuous values | Temperature | Not categories | Key difference |
-| When should it be used? | When exact value matters | Sales forecasting | Common business task | Important |
-| Why learn it? | Used in pricing, forecasting, estimation | Stock prediction | Major ML foundation | Essential |
+| Linear Regression (LR) | Linear Regression | Best-fit line | Salary prediction | Cannot handle complexity |
+| Ridge Regression | Ridge Regression | Reduces overfitting | House price | Keeps all features |
+| Lasso Regression | Lasso Regression | Removes weak features | Feature selection | May remove useful features |
+| Decision Tree Regressor (DTR) | Decision Tree Regressor | Rule splitting | House pricing | Can overfit |
+| Random Forest Regressor (RFR) | Random Forest Regressor | Multiple trees | Sales prediction | Slower |
+| Gradient Boosting Regressor (GBR) | Gradient Boosting Regressor | Fixes previous errors | Demand forecasting | Slow training |
+
+---
+
+## 3.6.1 Example A: Linear Regression (Detailed)
+
+```text
+1. Collect salary data
+
+2. Model learns:
+
+More experience → higher salary
+
+3. New employee:
+   Experience = 7 years
+
+4. Predicted salary:
+
+RM11,000
+```
+
+---
+
+## 3.6.2 Example B: Random Forest Regressor (Detailed)
+
+```text
+1. Collect housing data
+
+2. Multiple trees make predictions
+
+3. Average prediction calculated
+
+4. Final prediction:
+
+RM780,000
+```
+
+---
+
+# 3.7 Regression Output Types
+
+This section explains output forms.
+
+| Output Type | Meaning | Example | Use Case | Notes |
+| --- | --- | --- | --- | --- |
+| Integer Output | Whole numbers | 5,000 units | Inventory | No decimals |
+| Decimal Output | Decimal values | 32.5°C | Weather | Common |
+| Range Output | Prediction range | RM400k–RM450k | Risk planning | Less common |
+
+---
+
+## 3.7.1 Example A: Decimal Output (Detailed)
+
+```text
+Weather model predicts:
+
+32.5°C
+```
+
+---
+
+## 3.7.2 Example B: Range Output (Detailed)
+
+```text
+House prediction:
+
+RM450,000 - RM500,000
+```
+
+---
+
+# 3.8 Regression Evaluation Metrics
+
+This section explains how regression performance is measured.
+
+| Metric | Full Form | What It Measures | Example | Best Use |
+| --- | --- | --- | --- | --- |
+| MAE | Mean Absolute Error | Average error | RM10,000 | Easy interpretation |
+| MSE | Mean Squared Error | Larger mistakes punished more | House pricing | Large errors matter |
+| RMSE | Root Mean Squared Error | Error in original unit | RM20,000 | Easy interpretation |
+| R² Score | R-Squared Score | Model explanation strength | 0.85 | Overall performance |
+
+---
+
+## 3.8.1 Example A: Mean Absolute Error (Detailed)
+
+```text
+Actual price:
+RM500,000
+
+Predicted price:
+RM480,000
+
+Error:
+RM20,000
+```
+
+---
+
+## 3.8.2 Example B: R² Score (Detailed)
+
+```text
+R² = 0.85
+
+Meaning:
+Model explains 85% of price variation
+```
+
+---
+
+# 3.9 Real-World Applications
+
+This section explains practical usage.
+
+| Industry | Input | Output | Example | Business Value |
+| --- | --- | --- | --- | --- |
+| Real Estate | House details | Price | Property platform | Better pricing |
+| Retail | Sales history | Future sales | Inventory planning | Reduce shortages |
+| Finance | Stock prices | Future price | Investment | Better decisions |
+| Weather | Weather data | Temperature | Forecasting | Planning |
+
+---
+
+## 3.9.1 Example A: Retail Forecasting (Detailed)
+
+```text
+1. Store checks previous sales
+
+2. Model predicts next month demand
+
+3. Output:
+
+6,000 units
+
+4. Store prepares inventory
+```
+
+---
+
+## 3.9.2 Example B: Weather Forecasting (Detailed)
+
+```text
+1. Weather sensors collect data
+
+2. Model predicts tomorrow temperature
+
+3. Output:
+
+31.8°C
+```
+
+---
+
+# 3.10 Regression vs Classification
+
+This section explains the difference.
+
+| Regression | Classification | Output Type | Example |
+| --- | --- | --- | --- |
+| Predict numbers | Predict categories | Number vs Label | House price vs Spam |
+
+---
+
+## 3.10.1 Example A: Regression
+
+```text
+House → RM500,000
+```
+
+---
+
+## 3.10.2 Example B: Classification
+
+```text
+Email → Spam
+```
+
+---
+
+# 3.11 Common Problems in Regression
+
+This section explains common issues.
+
+| Problem | Cause | Example | Impact | Solution |
+| --- | --- | --- | --- | --- |
+| Overfitting | Model too complex | Memorizes prices | Poor future prediction | Regularization |
+| Underfitting | Model too simple | Weak predictions | Low accuracy | Better model |
+| Outliers | Extreme values | RM50M house | Distorted learning | Data cleaning |
+| Missing Data | Missing inputs | Missing salary | Poor prediction | Imputation |
+
+---
+
+## 3.11.1 Example A: Outlier Problem (Detailed)
+
+```text
+Most houses:
+RM500,000
+
+One house:
+RM50,000,000
+
+Model becomes confused
+```
+
+---
+
+## 3.11.2 Example B: Missing Data Problem (Detailed)
+
+```text
+Missing house location
+
+Model cannot make accurate prediction
+```
+
+---
+
+# 3.12 End-to-End Example: House Price Prediction System
+
+This section connects everything.
+
+| Step | Input | Process | Output | Purpose |
+| --- | --- | --- | --- | --- |
+| 1 | House data | Collect data | Dataset | Training |
+| 2 | Prices | Add labels | Labeled data | Learning |
+| 3 | Training data | Train model | Regression model | Learn |
+| 4 | Testing data | Evaluate | Metrics | Check performance |
+| 5 | New house | Predict price | RM850,000 | Real usage |
+
+---
+
+## 3.12.1 Full Pipeline
+
+```text
+Collect Data
+→ Create Features
+→ Add Labels
+→ Train Model
+→ Evaluate Model
+→ Improve Model
+→ Deploy Model
+→ Predict Future Value
+```
+
+---
+
+# 3.13 Final Summary
+
+This section summarizes regression.
+
+Regression predicts numerical values.
+
+```text
+Input → Learn Patterns → Predict Number
+```
+
+Examples:
+
+```text
+House → RM850,000
+Temperature → 32.5°C
+Sales → 8,000 units
+Salary → RM9,500
+```
