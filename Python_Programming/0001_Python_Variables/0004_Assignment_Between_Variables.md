@@ -67,7 +67,7 @@ b = 50
 
 ---
 
-## 1.2 Technical Meaning (Reference Copy)
+## 1.2 Technical Meaning
 
 This section explains what actually happens internally.
 
