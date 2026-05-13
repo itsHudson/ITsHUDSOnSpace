@@ -65,7 +65,7 @@ Python:
 
 ---
 
-## Comparison Table
+### Comparison Table
 
 | Feature | Assignment | Reassignment |
 | --- | --- | --- |
